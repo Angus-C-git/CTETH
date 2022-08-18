@@ -1,5 +1,5 @@
 /***
- * :::::::::::: Guess The Number ::::::::::::
+ * :::::::::::: Guess The Secret Number ::::::::::::
  * 
  * */
 
@@ -37,7 +37,7 @@ const targetHash = "0xdb81b4d58595fbbbb592d3661a34cdca14d7ab379441400cbfa1b78bc4
  * 
  * @param goalHash 
  * @returns the found number needed
- * to prove the goalHash or false if 
+ * to produce the goalHash or false if 
  * no number succeeded
  */
 const guessNumber = (goalHash: string) => {
