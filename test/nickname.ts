@@ -1,5 +1,5 @@
 /***
- * :::::::::::: CHALLENGE TEMPLATE ::::::::::::
+ * :::::::::::: Choose a Nickname ::::::::::::
  * 
  * */
 
@@ -15,19 +15,19 @@ import { expect } from "chai";
 // contract object
 let contract: Contract; 
 // hex address of the contract
-const contractAddr = "0x<contract-address>"
+const contractAddr = "0x71c46Ed333C35e4E6c62D32dc7C8F00D125b4fee"
 // contract name according to solidity code
-const contractName = "ChallengeName" 
+const contractName = "CaptureTheEther" 
 
 
  /**
-  * Spawn an reference to the contract object
+  * Spawn an refrence to the contract object
   * and assign it globally before we use it
   * in solutions.
   * */
  before(async () => {
   // pull the contract and store a reference to it
-  const factory =  await ethers.getContractFactory(contractName)
+  const factory = await ethers.getContractFactory(contractName)
   contract = factory.attach(contractAddr)
 });
 
@@ -35,7 +35,10 @@ const contractName = "ChallengeName"
 /**
  * SOLUTION
  **/
-it("solves <challenge-name>", async function () {
-	// sol body
+it("solves choose a nickname", async function () {
+    const tx = await contract.setNickname(
+        ethers.utils.formatBytes32String(`http-418`)
+    );
+    const txHash = tx.hash
+    expect(txHash).to.not.be.undefined
 });
-
